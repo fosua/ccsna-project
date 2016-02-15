@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 20, 2015 4:22:26 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ccsna.safetynet.model.Member" table="Member" catalog="CCSNA" optimistic-lock="version">
+        <id name="memberId" type="java.lang.Integer">
+            <column name="memberID"  />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="agency" class="com.ccsna.safetynet.model.Agency" fetch="select" lazy="false">
+            <column name="agencyID" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username"  not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password"  not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="firstName" not-null="true" />
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="emailAddress" />
+        </property>
+        <property name="phoneNumber" type="java.lang.Long">
+            <column name="phoneNumber" precision="10" scale="0" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="15" />
+        </property>
+        <!--   <property name="streetAddress" type="string">
+            <column name="streetAddress" length="150" />
+        </property>
+        <property name="apartmentNo" type="string">
+            <column name="apartmentNo" length="10" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="100" />
+        </property>
+        <property name="zipcode" type="java.lang.Long">
+            <column name="zipcode" precision="10" scale="0" />
+        </property>
+        <property name="county" type="string">
+            <column name="county" length="100" />
+        </property> -->
+        <property name="dateCreated" type="date">
+            <column name="dateCreated" length="10" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="createdBy" length="10" />
+        </property>
+        <property name="dateUpdated" type="date">
+            <column name="dateUpdated" length="10" />
+        </property>
+        <property name="updatedBy" type="string">
+            <column name="updatedBy" length="10" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="20" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

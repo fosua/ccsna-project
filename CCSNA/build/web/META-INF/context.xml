@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/ccsafetynet">
+<Resource auth="Container"
+          driverClassName="com.mysql.jdbc.Driver" maxIdle="10" maxWait="10000" name="jdbc/CCSNA" password="123@esta!"
+          type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/CCSNA?zeroDateTimeBehavior=convertToNull" username="root"/>
+</Context>
